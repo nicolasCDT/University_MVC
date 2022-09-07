@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset="utf-8">
+    <title>Forum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,accueil">
+    <meta name="Description" content="Forum">
+    <link rel="stylesheet" href="{% assets(css/gris.css) %}">
+    <link rel="stylesheet" href="{% assets(css/header.css) %}">
+    <link rel="stylesheet" href="{% assets(css/affichetopic.css) %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"/>
+</head>
+<body onload="chargementTheme()">
+<canvas id="fond"></canvas>
+<div id="sidenav">
+            <span id="btn" onclick="listeNav()"><i class="fas fa-bars"></i> </span>
+        </div>
+<header id="header">
+    <nav>
+        
+        <div id="accueil_forum_inscription_connexion">
+            <a href="{% route(/indexC) %}" class="boutons_standards">Accueil</a>
+            <a href="{% route(/forum) %}" class="boutons_standards">Forum</a>
+            <a href="{% route(/login) %}" id="connexion">Connexion</a>
+        </div>
+    </nav>
+
+
+
+    <nav id="mySidenav" class="sidenav">
+                <div class="menu">
+                    
+                    <a href="{% route(/indexC) %}" class="boutons_standardsMenu">Accueil</a>
+                    <a href="{% route(/forum) %}" class="boutons_standardsMenu">Forum</a>
+                    <a href="{% route(/login) %}" id="connexionMenu">Connexion</a>
+                </div>
+            
+            </nav>
+</header>
+<section>
+    <div id="bloc_forum">
+        <h1>Sujet random de topic blablabla</h1>
+        
+        <table id="forumTable">
+            <tbody>
+                <tr class="fil_pair" >
+                    
+                    <td class="image"><img src="{% assets(images/logo_topic.png) %}" alt="logo_topic" class="logo_topic"></td>
+                    
+                    <td class="sujet"><strong>Message</strong><br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        
+                    </td>
+                    <td class="reponses"></td>
+                    <td class="vues"></td>
+                    <td class="der_message">par <span class="nom_auteur">Insérer nom Auteur</span><br />
+                        le Insérer la date du message
+                    </td>
+
+                </tr>
+                
+                <tr class="fil_impair" >
+                    <td class="image"><img src="{% assets(images/logo_topic.png) %}" alt="logo_topic" class="logo_topic"></td>
+                    <td class="sujet"><strong>Message</strong><br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        Message Message Message Message Message Message Message Message <br />
+                        
+                    </td>
+                    <td class="reponses"></td>
+                    <td class="vues"></td>
+                    <td class="der_message">par <span class="nom_auteur">Insérer nom Auteur</span><br />
+                        le Insérer la date du message
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="bloc_tri">
+            <form action="#" method="get">
+                <label for="tri">Trier les fils de discussion par</label>
+                <select name="option_tri" id="tri" class="selection">
+                    <option value="date_creation">Date de création</option>
+                    <option value="auteur">Nom de l'auteur</option>
+                    <option value="reponses">Nombre de réponses</option>
+                    <option value="vues">Nombre de vues</option>
+                    <option value="dernier_message">Dernière réponse</option>
+                </select>
+                <label for="ordre">Ordre</label>
+                <select name="option_ordre" id="ordre" class="selection">
+                    <option value="croissant">Croissant</option>
+                    <option value="decroissant">Décroissant</option>
+                </select>
+                <input type="submit" value="Trier" id="bouton_tri"/>
+            </form>
+        </div>
+        <button type="button" class="bouton_creation_message" onclick="creationMessage()">Nouveau message</button>
+        
+    </div>
+</section>
+
+<footer>
+    <p id="mentions">© Les développeurs Front-End </p>
+    <div id="toggle_Theme">
+        <p>Changer le thème :</p>
+        <input type="checkbox" name="switch" id="switch">
+        <label onclick="theme(); changementTheme();" for="switch"></label>
+    </div>
+</footer>
+<script src="{% assets(js/sidenav.js) %}"></script>
+<script>
+    theme = () => {
+            let links = document.querySelector("link"); 
+            if (links.getAttribute("href")==="{% assets(css/bleu.css) %}") {
+
+                
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/gris.css) %}"); 
+                // lien vers ton autre theme 
+
+
+
+            }
+            else
+
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/bleu.css) %}"); 
+                // lien vers ton autre theme 
+            
+
+        }
+</script>
+<script src="{% assets(js/testcanvas.js) %}"></script>
+<script src="{% assets(js/creation_message.js) %}"></script>
+</body>
+</html>

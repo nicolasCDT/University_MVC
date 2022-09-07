@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset="utf-8">
+    <title>Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,accueil">
+    <meta name="Description" content="Accueil">
+    <link rel="stylesheet" href="{% assets(css/gris.css) %}">
+    <link rel="stylesheet" href="{% assets(css/header.css) %}">
+    <link rel="stylesheet" href="{% assets(css/index.css) %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"/>
+</head>
+<body>
+
+<video preload id="video0" class="videos" autoplay loop muted>
+    <source id="source_video" src="{% assets(videos/biologie.mp4) %}" type="video/mp4">
+</video> 
+<video preload id="video1" class="videos" autoplay loop muted>
+    <source id="source_video" src="{% assets(videos/chimie.mp4) %}" type="video/mp4">
+</video>
+<video preload id="video2" class="videos" autoplay loop muted>
+    <source id="source_video" src="{% assets(videos/geographie.mp4) %}" type="video/mp4">
+</video>
+<video preload id="video3" class="videos" autoplay loop muted>
+    <source id="source_video" src="{% assets(videos/histoire.mp4) %}" type="video/mp4">
+</video>
+<video preload id="video4" class="videos" autoplay loop muted>
+    <source id="source_video" src="{% assets(videos/litterature.mp4) %}" type="video/mp4">
+</video>
+<video preload id="video5" class="videos" autoplay loop muted>
+    <source id="source_video" src="{% assets(videos/physique.mp4) %}" type="video/mp4">
+</video>
+
+<div id="sidenav">
+            <span id="btn" onclick="listeNav()"><i class="fas fa-bars"></i> </span>
+        </div>
+<header>
+    <nav>
+        <div id="accueil_forum_inscription_connexion">
+            <a href="{% route(/indexA) %}" class="boutons_standards">Accueil</a>
+            <a href="{% route(/forumA) %}" class="boutons_standards">Forum</a>
+            <a href="{% route(/nouveaucompte) %}" class="boutons_standards">Ajout Compte</a>
+            <a href="{% route(/nouveaucours) %}" class="boutons_standards">Ajout Cours</a>
+            <a href="{% route(/monCompte) %}" class="boutons_standards">Mon Compte</a>
+            <a href="{% route(/index) %}" id="connexion">Déconnexion</a>
+        </div>
+    </nav>
+
+     <nav id="mySidenav" class="sidenav">
+                <div class="menu">
+                    
+                    <a href="{% route(/indexA) %}" class="boutons_standardsMenu">Accueil</a>
+                    <a href="{% route(/forumA) %}" class="boutons_standardsMenu">Forum</a>
+                    <a href="{% route(/nouveaucompte) %}" class="boutons_standardsMenu">Ajout Compte</a>
+                    <a href="{% route(/nouveaucours) %}" class="boutons_standardsMenu">Ajout Cours</a>
+                    <a href="{% route(/monCompte) %}" class="boutons_standardsMenu">Mon Compte</a>
+                    <a href="{% route(/index) %}" id="connexionMenu">Déconnexion</a>
+                </div>
+            
+            </nav>
+</header>
+<section>
+    <div id="conteneur_video">
+        <div id="partie_gauche"></div>
+        <div id="bloc_gauche" onclick="videoPrecedente()"></div>
+        <div id="bloc_central" onclick=""></div>
+        <div id="partie_droite"></div>
+        <div id="bloc_droit" onclick="videoSuivante()"></div>
+        <p id="theme">Thèmes</p>
+        <span id="fleches">
+			<img id="fleche_gauche" src="{% assets(images/fleche_gauche.png) %}" alt="fleche gauche"/>
+			<img id="fleche_droite" src="{% assets(images/fleche_droite.png) %}" alt="fleche droite"/>
+		</span>
+        <p id="presentation">Biologie</p>
+    </div>
+</section>
+
+<footer>
+    <p id="mentions">© Les développeurs Front-End </p>
+    <div id="toggle_Theme">
+        <p>Changer le thème :</p>
+        <input type="checkbox" name="switch" id="switch">
+        <label  onclick="theme()" for="switch"></label>
+    </div>
+</footer>
+<script src="{% assets(js/index.js) %}"></script>
+<script src="{% assets(js/defilement_themes.js) %}"></script>
+<script>
+    theme = () => {
+            let links = document.querySelector("link"); 
+            if (links.getAttribute("href")==="{% assets(css/bleu.css) %}") {
+
+                
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/gris.css) %}"); 
+                // lien vers ton autre theme 
+
+
+
+            }
+            else
+
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/bleu.css) %}"); 
+                // lien vers ton autre theme 
+            
+
+        }
+</script>
+<script src="{% assets(js/sidenav.js) %}"></script>
+
+</body>
+</html>

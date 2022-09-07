@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset="utf-8">
+    <title>Forum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,accueil">
+    <meta name="Description" content="Mes Cours">
+    <link rel="stylesheet" href="{% assets(css/gris.css) %}">
+    <link rel="stylesheet" href="{% assets(css/header.css) %}">
+    <link rel="stylesheet" href="{% assets(css/themecours.css) %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"/>
+</head>
+<body onload="chargementTheme()">
+<canvas id="fond"></canvas>
+<div id="sidenav">
+            <span id="btn" onclick="listeNav()"><i class="fas fa-bars"></i> </span>
+        </div>
+<header>
+    <nav>
+        
+        <div id="accueil_forum_inscription_connexion">
+            <a href="{% route(/indexC) %}" class="boutons_standards">Accueil</a>
+            <a href="{% route(/forumC) %}" class="boutons_standards">Forum</a>
+            <a href="{% route(/mesCours) %}" class="boutons_standards">Mes Cours</a>
+            <a href="{% route(/monCompte) %}" class="boutons_standards">Mon Compte</a>
+            <a href="{% route(/index) %}" id="connexion">Déconnexion</a>
+        </div>
+    </nav>
+
+     <nav id="mySidenav" class="sidenav">
+                <div class="menu">
+                    
+                    <a href="{% route(/indexC) %}" class="boutons_standardsMenu">Accueil</a>
+            <a href="{% route(/forumC) %}" class="boutons_standardsMenu">Forum</a>
+            <a href="{% route(/mesCours) %}" class="boutons_standardsMenu">Mes Cours</a>
+            <a href="{% route(/monCompte) %}" class="boutons_standardsMenu">Mon Compte</a>
+            <a href="{% route(/index) %}" id="connexionMenu">Déconnexion</a>
+                </div>
+            
+            </nav>
+
+</header>
+<section>
+    <div id="carousel">
+                <p class="titre">Mes Thèmes</p>
+                <ul class="carousel-items">
+                    <li class="carousel-item">
+                        <a href="{% route(/biologie) %}">
+                        
+                            <video preload id="video0" class="videos" autoplay loop muted>
+                                    <source id="source_video" src="{% assets(videos/biologie.mp4) %}" type="video/mp4">
+                            </video>
+                            <p class="texte">Biologie</p>
+                        </a>
+                    </li>
+                    <li class="carousel-item">
+                    
+                        <a href="{% route(/chimie) %}">
+                         <video preload id="video1" class="videos" autoplay loop muted>
+                            <source id="source_video" src="{% assets(videos/chimie.mp4) %}" type="video/mp4">
+                        </video>
+                        <p class="texte">Chimie</p>
+                        </a>
+                    </li>
+                    <li class="carousel-item">
+                        <a href="{% route(/geographie) %}">
+                        
+                         <video preload id="video2" class="videos" autoplay loop muted>
+                            <source id="source_video" src="{% assets(videos/geographie.mp4) %}" type="video/mp4">
+                        </video> 
+                        <p class="texte">Géographie</p>
+                        </a>
+                    </li>
+                    <li class="carousel-item">
+                        <a href="{% route(/histoire) %}">
+                        
+                        <video preload id="video3" class="videos" autoplay loop muted>
+                            <source id="source_video" src="{% assets(videos/histoire.mp4) %}" type="video/mp4">
+                        </video>                       
+                        <p class="texte">Histoire</p>
+                        </a>
+                    </li>
+                    <li class="carousel-item">
+                   
+                        <a href="{% route(/litterature) %}">
+                        <video preload id="video4" class="videos" autoplay loop muted>
+                            <source id="source_video" src="{% assets(videos/litterature.mp4) %}" type="video/mp4">
+                        </video>                      
+                        <p class="texte">Littérature</p>
+                        </a>
+                    </li>
+                    <li class="carousel-item">
+                        <a href="{% route(/physique) %}">
+                        
+                        <video preload id="video5" class="videos" autoplay loop muted>
+                            <source id="source_video" src="{% assets(videos/physique.mp4) %}" type="video/mp4">
+                        </video>                      
+                        <p class="texte">Physique</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="grid">
+               <p class="titre">Biologie</p>
+               <div id="center1" align="center">
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    
+                </div>
+
+                <div id="center" align="center">
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    
+                </div>
+
+                <div id="center" align="center">
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    
+                </div>
+
+                <div id="center" align="center">
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    
+                </div>
+
+                <div id="center" align="center">
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    <div class="container">
+                    <!-- Case -->
+                    <a href="{% route(/maquettecours) %}">
+                        <img src="{% assets(images/biologie.jpg) %}"></img>
+                        <p class="text">Bio</p>
+                        </a>
+                    <!-- vidéo -->
+                    </div>
+                    
+                </div>
+                <div id="center2" align="center">
+                    <div id="divBoutons">
+                        <form class="boutons" action="" method="post">
+                            <input type="submit" class="boutons_cours" value="Précédent"/>
+                        </form>
+                    </div>
+                    <div id="divBoutons">
+                        
+                    </div>
+                    <div id="divBoutons">
+                     <form class="boutons" action="" method="post">
+                            <input type="submit" class="boutons_cours" value="Suivant"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+
+
+
+
+
+</section>
+
+<footer>
+    <p id="mentions">© Les développeurs Front-End </p>
+    <div id="toggle_Theme">
+        <p>Changer le thème :</p>
+        <input type="checkbox" name="switch" id="switch">
+        <label  onclick="theme(); changementTheme();" for="switch"></label>
+    </div>
+</footer>
+<script src="{% assets(js/testcanvas.js) %}"></script>
+<script src="{% assets(js/sidenav.js) %}"></script>
+<script>
+    theme = () => {
+            let links = document.querySelector("link"); 
+            if (links.getAttribute("href")==="{% assets(css/bleu.css) %}") {
+
+                
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/gris.css) %}"); 
+                // lien vers ton autre theme 
+
+
+
+            }
+            else
+
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/bleu.css) %}"); 
+                // lien vers ton autre theme 
+            
+
+        }
+</script>
+
+</body>
+</html>

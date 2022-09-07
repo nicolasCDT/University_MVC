@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="login,signin">
+    <meta name="robots" content="login/signin">
+    <meta name="Description" content="Login">
+    <link rel="stylesheet" href="{% assets(css/gris.css) %}">
+    <link rel="stylesheet" href="{% assets(css/header.css) %}">
+    <link rel="stylesheet" href="{% assets(css/nouveaucompte.css) %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"/>
+</head>
+<body onload="chargementTheme()">
+<canvas id="fond"></canvas>
+<div id="sidenav">
+    <span id="btn" onclick="listeNav()"><i class="fas fa-bars"></i> </span>
+</div>
+<header>
+    <nav>
+        <div id="accueil_forum_inscription_connexion">
+            <a href="{% route(/indexC) %}" class="boutons_standards">Accueil</a>
+            <a href="{% route(/forumC) %}" class="boutons_standards">Forum</a>
+            <a href="{% route(/nouveaucompte) %}" class="boutons_standards">Ajout Compte</a>
+            <a href="{% route(/nouveaucours) %}" class="boutons_standards">Ajout Cours</a>
+            <a href="{% route(/monCompte) %}" class="boutons_standards">Mon Compte</a>
+            <a href="{% route(/index) %}" id="connexion">Déconnexion</a>
+        </div>
+    </nav>
+
+     <nav id="mySidenav" class="sidenav">
+                <div class="menu">
+                    
+                    <a href="{% route(/indexC) %}" class="boutons_standardsMenu">Accueil</a>
+                    <a href="{% route(/forumC) %}" class="boutons_standardsMenu">Forum</a>
+                    <a href="{% route(/nouveaucompte) %}" class="boutons_standardsMenu">Ajout Compte</a>
+                    <a href="{% route(/nouveaucours) %}" class="boutons_standardsMenu">Ajout Cours</a>
+                    <a href="{% route(/monCompte) %}" class="boutons_standardsMenu">Mon Compte</a>
+                    <a href="{% route(/index) %}" id="connexionMenu">Déconnexion</a>
+                </div>
+            
+            </nav>
+</header>
+<section>
+    <div id="bloc">
+        <p class="titre">Nouvel utilisateur</p>
+        <p class="texte"></p>
+        <form method="POST" action="#">
+                <table class="tableau">
+                    <tr>
+                    <td class="tdLeft"><label class="texte" for="nom">Nom :</label></td>
+                    <td class="tdRight"><label class="texte" for="prenom">Prénom :</label></td>
+                </tr>
+                <tr>
+                    <td class="tdLeft"><input class="boxreponses" name="nom" type="text" placeholder="Majuscule + mini 4 lettres, tirets, espaces, apostrophes" pattern="[A-Z][A-Za-z' -]{3}[A-Za-z' -]+" required></td>
+                    <td class="tdRight"><input class="boxreponses" name="prenom" type="text" placeholder="Majuscule + mini 4 lettres, tirets, espaces, apostrophes" pattern="[A-Z][A-Za-z' -]{3}[A-Za-z' -]+" required></td>
+                </tr>
+                <tr>
+                    <td class="tdLeft"><label class="texte" for="mail">Adresse e-mail :</label></td>
+                    <td class="tdRight"><label class="texte" for="telephone">Téléphone :</label></td>
+                </tr>
+                <tr>
+                    <td class="tdLeft"><input class="boxreponses" name="mail" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" placeholder="xyz@abcd.def" required></td>
+
+                    <td class="tdRight"><input  class="boxreponses" name="telephone" type="tel" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" placeholder="+33 1 23 45 67 89" required></td>
+                </tr>
+                <tr>
+                    <td class="tdLeft"><label class="texte" for="pseudo">Nom d'utilisateur :</label></td>
+                    <td class="tdRight"><label class="texte" for="motdepasse">Mot de Passe :</label></td>
+                </tr>
+                <tr>
+                    <td class="tdLeft"><input class="boxreponses" name="pseudo" type="text"  pattern="[A-Z][A-Za-z' -]{3}[A-Za-z' -]+" placeholder="Majuscule + mini 4 lettres, tirets, espaces, apostrophes" autocomplete="username" required></td>
+                    <td class="tdRight"><input class="boxreponses" name="motdepasse" type="password" autocomplete="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="8 caractères mini (un chiffre, une miniscule, une majuscule)" required></td>
+                </tr>
+
+            </table>
+                    <input id="submitInscription" type="submit" value="Créer un utilisateur">
+                    <p class="texte2">En créant un compte, vous acceptez nos Conditions d'utilisation & notre Politique de confidentialité, </br> et confirmez être âgé d'au moins 16 ans.</p>
+
+        </form>
+    </div>
+</section>
+<footer>
+    <p id="mentions">© Les développeurs Front-End </p>
+    <div id="toggle_Theme">
+        <p>Changer le thème :</p>
+        <input type="checkbox" name="switch" id="switch">
+        <label  onclick="theme(); changementTheme();" for="switch"></label>
+    </div>
+</footer>
+<script src="{% assets(js/sidenav.js) %}"></script>
+<script>
+    theme = () => {
+            let links = document.querySelector("link"); 
+            if (links.getAttribute("href")==="{% assets(css/bleu.css) %}") {
+
+                
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/gris.css) %}"); 
+                // lien vers ton autre theme 
+
+
+
+            }
+            else
+
+                // selon celui que tu veux récupérer je sais pas comment marche ton truc
+                links.setAttribute('href', "{% assets(css/bleu.css) %}"); 
+                // lien vers ton autre theme 
+            
+
+        }
+</script>
+<script src="{% assets(js/testcanvas.js) %}"></script>
+</body>
+</html>

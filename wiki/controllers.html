@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title>Dev Wiki</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar">
+    <div class="custom-menu">
+      <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+    </div>
+    <h1><a href="index.html" class="logo">DAW</a></h1>
+    <ul class="list-unstyled components mb-5">
+      <li>
+        <a href="index.html"><span class="fa fa-home mr-3"></span> Accueil</a>
+      </li>
+      <li class="active">
+        <a href="controllers.html"><span class="fa fa-star mr-3"></span> Contrôleur</a>
+      </li>
+      <li>
+        <a href="vue.html"><span class="fa fa-sticky-note mr-3"></span> Vue</a>
+      </li>
+      <li>
+        <a href="modele.html"><span class="fa fa-user mr-3"></span> Modèle</a>
+      </li>
+      <li>
+        <a href="addpage.html"><span class="fa fa-paper-plane mr-3"></span> Ajouter une page</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <h2 class="mb-4">Projet: Contrôleurs</h2>
+    <p>
+      Les <strong>contrôleurs</strong> sont des boites pour organiser nos pages.
+    </p>
+    <p>
+      Pour créer un contrôleur, vous pouvez utiliser le script <strong>make_controller.sh</strong> (Shell obligatoire).
+    </p>
+    <p>
+      Les contrôleurs contiennent le traitement des pages. C'est lui qui reçoit la demande de l'utilisateur dans sa fonction
+      (<strong>Request</strong>), la traite, puis renvoie une réponse (<strong>Response</strong>) à l'utilisateur.
+    </p>
+
+    <p>Pour ceux qui ne peuvent pas utiliser le shell, voici un contrôleur par défaut, auquel il faut remplacer <strong>[NAME]</strong> par le nom de votre contrôler.</p>
+    <code>
+      &lt?php<br />
+namespace App\Controller;<br />
+      <br />
+require_once("../core/AbstractController.php");<br />
+      <br />
+use App\HTTP\Request;<br />
+use App\HTTP\Response;<br />
+      <br />
+class [NAME]Controller extends AbstractController<br />
+{<br />
+      &ensp;public function __construct() {<br />
+      &ensp;&ensp;parent::__construct();<br />
+      &ensp;&ensp;// Update routes :<br />
+      &ensp;&ensp;$this->routes["/example/"] = "example";<br />
+      &ensp;}<br />
+      <br />
+      &ensp;public function example(Request $request): Response {<br />
+      &ensp;&ensp;$response = new Response("content");<br />
+      &ensp;&ensp;return $response;<br />
+      &ensp; }<br />
+      }<br />
+      ';<br />
+    </code>
+  </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

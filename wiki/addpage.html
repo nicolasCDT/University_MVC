@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <title>Dev Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+        <h1><a href="index.html" class="logo">DAW</a></h1>
+        <ul class="list-unstyled components mb-5">
+            <li>
+                <a href="index.html"><span class="fa fa-home mr-3"></span> Accueil</a>
+            </li>
+            <li>
+                <a href="controllers.html"><span class="fa fa-star mr-3"></span> Contrôleur</a>
+            </li>
+            <li>
+                <a href="vue.html"><span class="fa fa-sticky-note mr-3"></span> Vue</a>
+            </li>
+            <li>
+                <a href="modele.html"><span class="fa fa-user mr-3"></span> Modèle</a>
+            </li>
+            <li class="active">
+                <a href="#"><span class="fa fa-paper-plane mr-3"></span> Ajouter une page</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Projet: Ajouter une page</h2>
+        <p>
+            Pour ajouter une page, il faut commencer par choisir le contrôleur dans lequel on va l'ajouter. <br/>
+            Une fois ceci fait, il faut ajouter le lien et le nom de la méthode dans le constructeur.
+        </p>
+        <p>Par exemple, nous allons ajouter une page qui dit <i>Coucou tout le monde</i>, accessible au lieu <code>mon-site.com/hello/world/</code></p>
+        <p>
+            On ajoute dans le constructeur : <code>$this->routes["/hello/world:"] = "maFonction";</code>
+            <br/>
+            On ajoute ensuite une fonction réponse dans le même contrôleur: <br />
+            <code>
+                &ensp;&ensp;public function index(Request $request): Response {<br />
+                &ensp;&ensp;&ensp;&ensp;return new Response('Coucou tout le monde');<br />
+                &ensp;&ensp;}<br />
+            </code>
+        </p>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

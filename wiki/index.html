@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <title>Dev Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+        <h1><a href="index.html" class="logo">DAW</a></h1>
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a href="#"><span class="fa fa-home mr-3"></span> Accueil</a>
+            </li>
+            <li>
+                <a href="controllers.html"><span class="fa fa-star mr-3"></span> Contrôleur</a>
+            </li>
+            <li>
+                <a href="vue.html"><span class="fa fa-sticky-note mr-3"></span> Vue</a>
+            </li>
+            <li>
+                <a href="modele.html"><span class="fa fa-user mr-3"></span> Modèle</a>
+            </li>
+            <li>
+                <a href="addpage.html"><span class="fa fa-paper-plane mr-3"></span> Ajouter une page</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Projet: DAW</h2>
+        <p>
+            Ce dossier (<strong>wiki</strong>) n'a pas à être partagé. <br />
+            Il est uniquement disponible pour les développeurs afin de faciliter la compréhension de l'architecture mise en place.
+        </p>
+        <p>
+            <strong>Il ne respecte pas la consigne qui dit qu'on doit faire tout nous même, car il utilise boostrap. Mais comme il n'a pas vocation a être
+            rendu et n'est pas inclus dans le site...</strong>
+        </p>
+        <br />
+        <h2>Mise en place du serveur</h2>
+        <p>Afin de mettre en place le serveur vous aurez besoin de :</p>
+        <ul>
+            <li>MAMP</li>
+            <li>Un clone du github</li>
+        </ul>
+        <p>Les étapes à suivre sont: </p>
+        <ol>
+            <li>Installer MAMP</li>
+            <li>Déplacer l'intégralité du git dans le dossier <strong>htdocs</strong> de MAMP.</li>
+            <li>Configurer MAMP :
+                <ul>
+                    <li>Utiliser <strong>PHP 8</strong> au minimum</li>
+                    <li>Utiliser <strong>Apache</strong></li>
+                    <li>Définir le fichier root (ou working directory) sur le dossier <strong>public</strong></li>
+                </ul>
+            </li>
+            <li>Se rendre sur la page de phpmyadmin= <a href="http://localhost:8888/phpmyadmin">lien avec le port 8888</a> :
+                <ol>
+                    <li>Créer une base de données nommée <strong>daw</strong>: à gauche de l'écran</li>
+                    <li>Se rendre dans la base de données, puis dans l'onglet SQL entrer:<br />
+                        <code>
+                            SET NAMES utf8mb4;<br />
+                            SET FOREIGN_KEY_CHECKS = 0;<br />
+
+                            DROP TABLE IF EXISTS `account`;<br />
+                            CREATE TABLE `account` (<br />
+                            `id` int(11) NOT NULL AUTO_INCREMENT,<br />
+                            `login` varchar(255) NOT NULL,<br />
+                            `password` varchar(255) NOT NULL,<br />
+                            `email` varchar(255) DEFAULT NULL,<br />
+                            `create_date` datetime DEFAULT NULL,<br />
+                            `tel` varchar(255) DEFAULT NULL,<br />
+                            `born` datetime DEFAULT NULL,<br />
+                            PRIMARY KEY (`id`)<br />
+                            ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;<br />
+
+                            BEGIN;<br />
+                            INSERT INTO `account` VALUES (1, 'taku', 'test', 'cc@nico.fr', '2022-03-10 12:03:17', '0633596086', '2001-06-08 12:00:00');<br />
+                            INSERT INTO `account` VALUES (2, 'root', 'test2', 'cc@nico.fr', '2022-03-10 12:03:31', '0633596086', '2001-06-08 12:00:00');<br />
+                            INSERT INTO `account` VALUES (3, 'other1', 'test22', 'cEc@nico.fr', '2022-03-10 12:03:38', '0633596086', '2001-06-08 12:00:00');<br />
+                            COMMIT;<br />
+
+                            SET FOREIGN_KEY_CHECKS = 1;<br />
+
+                        </code>
+                    </li>
+                </ol>
+            </li>
+            <li>Le site est désormais fonctionnel.</li>
+        </ol>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+/**************************** Commun *************************/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+.titre{
+    background-color: rgba(218,218,218,0.5);
+    font-weight: 800;
+    color: rgba(243,243,243,1);
+    filter: drop-shadow(0px 5px 5px #1E1E1E);
+}
+
+.texte{
+    font-family: inherit;
+    color: #F3F3F3;
+}
+select{
+    font-family: inherit;
+}
+/****** header.css ******/
+
+header{
+    background-color :#1E1E1E;
+}
+
+#fond{
+    background-color: #696969;
+}
+
+#sidenav span{
+    color: #F3F3F3;
+}
+
+.sidenav {
+  background-color: #1E1E1E;
+  box-shadow: 0px 5px 5px #1E1E1E;
+}
+
+.sidenav .menu a {
+  color: #F3F3F3;
+}
+
+#connexion{
+    color: #F3F3F3;
+    background-color: #E59820;
+    font-family: inherit;
+    border: 3px solid #E59820;
+}
+
+#connexion:hover{
+    background-color: #F3F3F3;
+    color: #E59820;
+    cursor: pointer;
+}
+
+.boutons_standards{
+    background-color: #1E1E1E;
+    color: #F3F3F3;
+    font-family: inherit;
+
+}
+
+.boutons_standards:hover{
+    background-color: #F3F3F3;
+    color: #1E1E1E;
+    cursor:  pointer;
+}
+
+#connexionMenu{
+    color: #E59820;
+    background-color: #1E1E1E;
+    font-family: inherit;
+}
+
+.boutons_standardsMenu{
+    background-color: #1E1E1E;
+    color: #F3F3F3;
+    border-bottom: 2px solid #F3F3F3;
+    font-family: inherit;
+}
+
+
+footer{
+    background-color: #1E1E1E;
+    color: #DADADA;
+}
+
+footer label {
+    background-color: #F3F3F3;
+    cursor: pointer;
+    box-shadow: 0 0 10px #F3F3F3;
+}
+
+footer label::after {
+    background-color: #1E1E1E;
+}
+
+
+footer input:checked + footer label {
+    background-color: #E59820;
+}
+
+::-webkit-scrollbar-track {
+    background-color:rgba(10,10,10,0.3);
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+/* index.css */
+
+#presentation{
+    color: #F3F3F3;
+}
+
+#theme{
+    background-color: #1E1E1E;
+    color: #F3F3F3;
+}
+
+#fleche_gauche
+{
+    filter: drop-shadow(0px 5px 5px #1E1E1E);
+}
+
+#fleche_droite
+{
+    filter: drop-shadow(0px 5px 5px #1E1E1E);
+}
+
+#partie_gauche
+{
+    background: linear-gradient(to right, rgba(30,30,30,0.7), rgba(30, 30, 30, 0));
+}
+
+#bloc_central:hover, #bloc_gauche:hover, #bloc_droit:hover{
+    cursor: pointer;
+}
+
+#partie_droite
+{
+    background: linear-gradient(to left, rgba(30,30,30,0.7), rgba(30, 30, 30, 0));
+}
+
+@media screen and (min-width: 3840px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 10px 10px #1E1E1E, 0px -10px 10px #1E1E1E;
+    }
+
+}
+
+@media screen and (max-width: 3839px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 7.5px 7.5px #1E1E1E, 0px -7.5px 7.5px #1E1E1E;
+    }
+}
+
+@media screen and (max-width: 2559px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 7.5px 7.5px #1E1E1E, 0px -7.5px 7.5px #1E1E1E;
+    }
+
+}
+
+@media screen and (max-width: 1920px) and (max-height: 2160px){
+
+     #conteneur_video{
+        box-shadow : 0px 5px 5px #1E1E1E, 0px -5px 5px #1E1E1E;
+    }
+
+}
+
+@media screen and (max-width: 1750px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 5px 5px #1E1E1E, 0px -5px 5px #1E1E1E;
+    }
+
+}
+
+@media screen and (max-width: 1366px) and (max-height: 2160px){
+
+     #conteneur_video{
+        box-shadow : 0px 5px 5px #1E1E1E, 0px -5px 5px #1E1E1E;
+    }
+
+}
+
+@media screen and (max-width: 1000px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 2.5px 2.5px #1E1E1E, 0px -2.5px 2.5px #1E1E1E;
+    }
+}
+
+@media screen and (max-width: 800px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 2.5px 2.5px #1E1E1E, 0px -2.5px 2.5px #1E1E1E;
+    }
+}
+
+@media screen and (max-width: 600px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 2.5px 2.5px #1E1E1E, 0px -2.5px 2.5px #1E1E1E;
+    }
+}
+
+@media screen and (max-width: 414px) and (max-height: 2160px){
+ 
+    #conteneur_video{
+        box-shadow : 0px 5px 5px #1E1E1E, 0px -5px 5px #1E1E1E;
+    }
+}
+
+@media screen and (max-width: 360px) and (max-height: 2160px){
+
+    #conteneur_video{
+        box-shadow : 0px 5px 5px #1E1E1E, 0px -5px 5px #1E1E1E;
+    }
+}
+
+/* login.css / nouveauciompte.css */
+
+#submitConnexion{
+    background-color: #E59820;
+    color: #F3F3F3;
+    border: 3px solid #E59820;
+    font-family: inherit;
+}
+
+#submitConnexion:hover{
+    background-color: #F3F3F3;
+    color: #E59820;
+    cursor:  pointer;
+}
+
+#submitInscription{
+    background-color: #E59820;
+    color: #F3F3F3;
+    font-family: inherit;
+    border: 3px solid #E59820;
+}
+
+#submitInscription:hover{
+    background-color: #F3F3F3;
+    color: #E59820;
+    cursor:  pointer;
+}
+
+#bloc{
+    background-color: #1E1E1E;
+    filter: drop-shadow(0px 5px 5px #1E1E1E);
+}
+
+.texte2{
+    font-family: inherit;
+    color: #F3F3F3;
+}
+
+/* Affichetopic.css / forum.css / newfil.css */
+
+h1{
+    color: #F3F3F3;
+}
+
+#bloc_forum{
+    background-color: #1E1E1E;
+}
+
+#recherche{
+    background-color: #DADADA;
+}
+
+#zone_recherche{
+    background-color: #F3F3F3;
+    font-family: inherit;
+    font-style: italic;
+}
+
+.bouton_creation_fil{
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: bold;
+    background-color: #E59820;
+}
+
+.bouton_creation_fil:hover{
+    background: linear-gradient(to right, #E59820, #F3F3F3);
+    cursor: pointer;
+}
+
+#bouton_recherche{
+    background-color: #1E1E1E;
+    color: #F3F3F3;
+    font-family: inherit;
+}
+
+#bouton_recherche:hover{
+    background-color: #F3F3F3;
+    color: #1E1E1E;
+    cursor: pointer;
+}
+
+thead{
+    color: #DADADA;
+    font-weight: bold;
+}
+
+tbody{
+    color: #1E1E1E;
+}
+
+#forumTable td{
+    border-bottom: 4px ridge rgba(30,30,30,0.6);
+}
+
+.fil_pair{
+    background-color: #F3F3F3;
+}
+
+.fil_impair{
+    background-color: #DADADA;
+}
+
+#forumTable .fil_pair:hover, #forumTable .fil_impair:hover{
+    background-color: #E59820;
+    cursor: pointer;
+}
+
+.nom_auteur{
+    
+    color: #E56820;
+    font-weight: bold;
+}
+
+#bloc_tri{
+    color: #F3F3F3;
+    font-family: inherit;
+}
+
+#bouton_tri{
+    background-color: #F3F3F3;
+    color: #1E1E1E;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+#bouton_tri:hover{
+    background-color: #DADADA;
+    color: #1E1E1E;
+    cursor: pointer;
+}
+
+.selection{
+    background-color: #F3F3F3;
+}
+
+.vues, .reponses{
+    border-left: 2px solid #F3F3F3;
+    border-right: 2px solid #F3F3F3;
+}
+
+#bloc_forum h1{
+    color: #F3F3F3;
+}
+
+#soustitre{
+    color: #1E1E1E;
+    font-family: inherit;
+}
+
+.zoneText{
+    color: #1E1E1E;
+}
+
+.bouton_creation_message{
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: bold;
+    background-color: #E59820;
+}
+
+.bouton_creation_message:hover{
+    background: linear-gradient(to right, #E59820, #F3F3F3);
+    cursor: pointer;
+}
+
+/* themecours.css / maquettecours.css / mesCours.css */
+
+#carousel{
+    background-color:rgba(0,0,0,0.3);
+}
+
+video{
+    background-color: black;
+}
+
+li p {
+  font-family: inherit;
+  color: #F3F3F3;
+}
+
+#grid{
+    background-color:rgba(0,0,0,0.3);
+}
+
+#grid img{
+    background-color: black;
+    border:1px solid #F3F3F3;
+}
+
+.text {
+    font-family: inherit;
+    color: #F3F3F3;
+}
+
+.boutons_cours{
+    background-color: #E59820;
+    color: #F3F3F3;
+    font-family: inherit;
+}
+
+.boutons_cours:hover{
+    background-color: #F3F3F3;
+    color: #1E1E1E;
+    cursor:  pointer;
+}
+
+/* monCompte.css */
+
+#blocCompte{
+    background-color: #1E1E1E;
+}
+
+#blocCompte table{
+    background-color:#F3F3F3;
+    border: 4px solid #696969;
+}
+
+.impair{
+    background-color: #DADADA;
+}
+
+#blocCompte td{
+    border-bottom: 4px solid #696969;
+}
+
+#blocCompte .texte{
+    font-family: inherit;
+    color: #1E1E1E;
+}
+
+#blocCompte .texte2{
+    font-family: inherit;
+    color: #1E1E1E;
+}
+
+.modifButton{
+    background-color: #E59820;
+    color: #F3F3F3;
+    font-family: inherit;
+    border: 3px solid #E59820;
+}
+
+.modifButton:hover{
+    background-color: #1E1E1E;
+    cursor:  pointer;
+}
+
+#suppButton{
+    background-color: #1E1E1E;
+    color: #F3F3F3;
+    font-family: inherit;
+    border: 3px solid #1E1E1E;
+}
+
+#suppButton:hover{
+    background-color: #ff0000;
+    cursor:  pointer;
+}

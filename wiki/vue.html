@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <title>Dev Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+        <h1><a href="index.html" class="logo">DAW</a></h1>
+        <ul class="list-unstyled components mb-5">
+            <li>
+                <a href="index.html"><span class="fa fa-home mr-3"></span> Accueil</a>
+            </li>
+            <li>
+                <a href="controllers.html"><span class="fa fa-star mr-3"></span> Contrôleur</a>
+            </li>
+            <li class="active">
+                <a href="#"><span class="fa fa-sticky-note mr-3"></span> Vue</a>
+            </li>
+            <li>
+                <a href="modele.html"><span class="fa fa-user mr-3"></span> Modèle</a>
+            </li>
+            <li>
+                <a href="addpage.html"><span class="fa fa-paper-plane mr-3"></span> Ajouter une page</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <h2 class="mb-4">Projet: Vue</h2>
+        <p>
+            Les <strong>vues</strong> sont le côté front-end du site. En fait sur le projet, ce sont un peu plus que des simples vues :
+            ce sont des <strong>templates</strong>. <br/>
+            Les vues peuvent contenir de l'HTML classique. Il existe cependant quelques extensions utilisables afin de ne pas intégrer de PHP dedans.
+        </p>
+
+        <h4>Afficher une variable</h4>
+        <p>Pour afficher une variable qui provient du contrôleur, il suffit, par exemple pour une variable nommée <strong>var</strong> de faire: <code>{{ var }}</code></p>
+
+        <h4>Lien vers un fichier assets</h4>
+        <p>Pour cela, vous pouvez utiliser une fonction <strong>assets</strong>. Elle construira toute seule le lien vers le fichier. <br/>
+        Par exemple, pour un fichier <strong>style.css</strong> se trouvant dans <strong>assets/css/style.css</strong>, on peut utiliser
+        <code>{% assets(css/style.css) %}</code>. <br/>
+        Le Kernel se chargera tout seul de générer le lien pour aller chercher ce fichier.
+        </p>
+
+        <h4>Lien vers une autre route</h4>
+        <p>Si vous voulez placer une redirection vers une autre page, il est possible d'utiliser la fonction <strong>route</strong>.<br />
+        Exemple: si vous voulez rediriger l'utilisateur vers la page <code>http://mon-site.com/forum/message/34/</code>, vous pouvez
+        utiliser dans le code: <code>{% route(/forum/message/34/ %}</code> <br />
+        Le framework se chargera seul de générer le bon lien.
+        </p>
+
+        <h4>Inclure une vue dans une autre</h4>
+        <p>Pour palier au manque de l'<code>include()</code> venant de PHP, il existe dans les templates sensiblement la même fonction. <br />
+        Pour inclure une autre vue, nommée par exemple <code>header.html</code>, il suffit de taper : <code>{% include(header.html) %}</code>
+        </p>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <title>Dev Wiki</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar">
+    <div class="custom-menu">
+      <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        <i class="fa fa-bars"></i>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+    </div>
+    <h1><a href="index.html" class="logo">DAW</a></h1>
+    <ul class="list-unstyled components mb-5">
+      <li>
+        <a href="index.html"><span class="fa fa-home mr-3"></span> Accueil</a>
+      </li>
+      <li>
+        <a href="controllers.html"><span class="fa fa-star mr-3"></span> Contrôleur</a>
+      </li>
+      <li>
+        <a href="vue.html"><span class="fa fa-sticky-note mr-3"></span> Vue</a>
+      </li>
+      <li class="active">
+        <a href="#"><span class="fa fa-user mr-3"></span> Modèle</a>
+      </li>
+      <li>
+        <a href="addpage.html"><span class="fa fa-paper-plane mr-3"></span> Ajouter une page</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="content" class="p-4 p-md-5 pt-5">
+    <h2 class="mb-4">Projet: Modèle</h2>
+    <p>
+      Les modèles sont découpés en deux grosses parties:
+    </p>
+    <ul>
+      <li>Entités</li>
+      <li>Dépôts</li>
+    </ul>
+    <h4>Les entités</h4>
+    <p>
+      Les entités modélise une ligne d'une table de la base de données. Dans le gros : C'est la traduction d'une ligne SQL en objet PHP. <br/>
+      Les entités peuvent être générées grâce au script <strong>make_entity.sh</strong> (Shell). <br/>
+      <strong>Attention: si vous générez une entité, il ne faut pas oublier d'exécuter le fichier .sql généré également !</strong>
+    </p>
+    <p>
+      A partir d'un contrôleur, vous pouvez créer une entité en l'instanciant. <strong>Il ne faut pas renseigner l'identifiant, la base de données s'en charge.</strong><br />
+      Pour l'ajouter à la base de données, il faut utiliser la méthode <code>add</code>: <code>$this->getDBManager->add(entity);</code>
+    </p>
+    <p>
+      Pour récupérer une entité déjà en base de données, il faut passer par les dépôts.
+    </p>
+
+    <h4>Les dépôts</h4>
+    <p>
+      Les dépôts modélisent quant à eux une table entière. C'est une liste organisée d'entités. <br/>
+      Par exemple, pour le dépôt <code>AccountRepository</code>, on peut récupére l'ensemble des comptes en base de données en faisant
+      <code>$this->getRepository(AccountRepository::class)->findAll()</code>. <br/>
+
+      Les méthodes principales sont :
+    </p>
+    <ul>
+      <li>findAll() : Renvoie toutes les entités</li>
+      <li>findBy() : Trouve les entités grâce à une liste de condition (tableau 2D propriété => valeur)</li>
+      <li>findOneBy() : Trouve la première entité qui respecte les conditions</li>
+    </ul>
+  </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<quiz>
+    <name>Quiz 1</name>
+    <questions>
+        <question id="1" correct_awnser="2">
+            <text>Quel adjectif décrit un cours annulé ?</text>
+            <awnser id="0">Sucré</awnser>
+            <awnser id="1">Salé</awnser>
+            <awnser id="2">Abrouked</awnser>
+        </question>
+    </questions>
+</quiz>

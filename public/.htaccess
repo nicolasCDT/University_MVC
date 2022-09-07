@@ -1,0 +1,8 @@
+# Enable url rewriting engine
+RewriteEngine on
+
+# If search name is not a filename or existing directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^ index.php [L] # Redirect to index.php with information

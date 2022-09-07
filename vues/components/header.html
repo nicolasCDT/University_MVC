@@ -1,0 +1,19 @@
+<link href="{% assets(css/header.css) %}" rel="stylesheet">
+<header>
+    <nav>
+        <div id="accueil_forum_inscription_connexion">
+            <form class="boutons" action="{% route(/index) %}" method="post">
+                <input type="submit" class="boutons_standards" value="Accueil"/>
+            </form>
+            <form class="boutons" action="{% route(/forum) %}" method="post">
+                <input type="submit" class="boutons_standards" value="Forum"/>
+            </form>
+            <form class="boutons" action="{% route(/login) %}" method="post">
+                <input type="submit" id="connexion" value="Connexion"/>
+            </form>
+            <form class="boutons" action="{% route(/mesCours) %}" method="post">
+                <input type="submit" class="boutons_standards" value="Mes Cours"/>
+            </form>
+        </div>
+    </nav>
+</header>
