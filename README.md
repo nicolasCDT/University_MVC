@@ -146,5 +146,5 @@ Ils permettent de regrouper des méthodes utilisées par plusieurs controllers (
 On peut les récupérer grâce à l'auto-injection de dépendances.
 
 ## Authors
- * Tous le PHP vient de moi (Nicolas Coudert).
+ * Tout le PHP vient de moi (Nicolas Coudert).
  * Le CSS, la majorité du JS et l'html ne vient pas de moi.
